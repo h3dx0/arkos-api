@@ -3,10 +3,7 @@ from django.db import models
 # Create your models here.
 
 
-class SistemaArkos(models.Model):
-    descripcion = models.TextField()
-
-
-class BeneficiosSistema(models.Model):
+class Recursos(models.Model):
     titulo = models.CharField(max_length=250)
     descripcion = models.TextField()
+    archivo = models.FileField(upload_to='recursos/')
