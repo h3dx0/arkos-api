@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'inicio',
     'contacto',
     'quienes_somos',
-    'sistema_arkos'
+    'sistema_arkos',
+    'recursos',
+    'proyectos'
 ]
 
 MIDDLEWARE = [
