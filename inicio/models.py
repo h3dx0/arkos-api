@@ -21,3 +21,9 @@ class ImagenGaleriaInicio(models.Model):
     imagen = models.FileField(upload_to='inicio/images/proyectos/')
     nombre = models.CharField(max_length=50)
     categoria = models.ForeignKey(CategoriasGaleria, on_delete=models.CASCADE, related_name='imagenes')
+
+class ComentarioClientesInicio(models.Model):
+    imagen = models.FileField(upload_to='inicio/images/clientes/')
+    nombre = models.CharField(max_length=50)
+    comentario = models.TextField(max_length=350)
+

@@ -1,6 +1,16 @@
 from django.contrib import admin
 
 # Register your models here.
-from proyectos.models import Proyecto
+from proyectos.models import Proyecto, ImagenProyecto, CategoriasProyecto
 
-admin.site.register(Proyecto)
+
+class ImagenAdmin(admin.TabularInline):
+    model = ImagenProyecto
+
+class ProyectoAdmin(admin.ModelAdmin):
+    list_display = ['titulo', 'categoria','descripcion', 'imagen']
+    inlines = [
+        ImagenAdmin,
+    ]
+admin.site.register(Proyecto, ProyectoAdmin)
+admin.site.register(CategoriasProyecto)

@@ -19,21 +19,35 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls.conf import include
 from rest_framework import routers
+
+from aplicaciones.views import AplicacionViewSet, CategoriaAplicacionViewSet, AplicacionDetalle
 from contacto.views import ContactoViewSet
+from inicio.views import InicioViewSet, CategoriaGaleriaViewSet, ImagenGaleriaViewSet, ComentarioClienteViewSet
 from recursos.views import RecursosViewSet
 from quienes_somos.views import QuienesSomosViewSet
-from proyectos.views import ProyectoViewSet
+from proyectos.views import ProyectoViewSet, CategoriaProyectoViewSet
+from sistema_arkos.views import SistemaViewSet, BeneficiosViewSet
 
 router = routers.DefaultRouter()
 router.register(r'contacto', ContactoViewSet)
 router.register(r'recursos', RecursosViewSet)
+router.register(r'sistema', SistemaViewSet)
+router.register(r'beneficios-sistema', BeneficiosViewSet)
 router.register(r'proyectos', ProyectoViewSet)
+router.register(r'proyectos-categorias', CategoriaProyectoViewSet)
 router.register(r'quienes-somos', QuienesSomosViewSet)
+router.register(r'inicio', InicioViewSet)
+router.register(r'aplicacion', AplicacionViewSet)
+router.register(r'aplicacion-categorias', CategoriaAplicacionViewSet)
+router.register(r'inicio-categorias', CategoriaGaleriaViewSet)
+router.register(r'inicio-imagenes-categoria', ImagenGaleriaViewSet)
+router.register(r'inicio-comentarios-cliente', ComentarioClienteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    # path('api/inicio/', include('inicio.urls', namespace='inicio')),
+    path('api/aplicaciones/', include('aplicaciones.urls', namespace='aplicaciones')),
+    path('api/proyecto/', include('proyectos.urls', namespace='proyectos')),
     # path('api/quienes-somos/', include('quienes_somos.urls', namespace='quienes_somos')),
     # path('api/sistema-arkos/', include('sistema_arkos.urls', namespace='sistema_arkos')),
     # path('api/contacto/', include('contacto.urls', namespace='contacto')),

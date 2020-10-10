@@ -1,8 +1,11 @@
 from django.urls import path
-from contacto import  views
+from rest_framework.urlpatterns import format_suffix_patterns
+
+from proyectos import  views
 app_name = 'proyectos'
 
 urlpatterns = [
-    # path('register/device/', views.register_device, name='register_device'),
+    path('detalle/<int:pk>/', views.ProyectoDetalle.as_view(), name='proyecto_detalle'),
 
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)
