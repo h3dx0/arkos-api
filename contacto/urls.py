@@ -3,6 +3,6 @@ from contacto import  views
 app_name = 'contacto'
 
 urlpatterns = [
-    # path('register/device/', views.register_device, name='register_device'),
+    path('send/email/', views.send_email, name='send_email'),
 
 ]

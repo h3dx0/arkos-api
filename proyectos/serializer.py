@@ -12,7 +12,8 @@ class ProyectoSerializer(serializers.ModelSerializer):
     imagenes = ImagenProyectoSerializer(many=True)
     class Meta:
         model = Proyecto
-        fields = ['titulo', 'categoria', 'descripcion', 'imagen','imagenes']
+        fields = ['id','titulo', 'categoria', 'descripcion', 'imagen','imagenes']
+        depth = 1
 
 class CategoriaProyectoSerializer(serializers.ModelSerializer):
     class Meta:

@@ -48,7 +48,7 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api/aplicaciones/', include('aplicaciones.urls', namespace='aplicaciones')),
     path('api/proyecto/', include('proyectos.urls', namespace='proyectos')),
-    # path('api/quienes-somos/', include('quienes_somos.urls', namespace='quienes_somos')),
+    path('api/contacto/', include('contacto.urls', namespace='contacto')),
     # path('api/sistema-arkos/', include('sistema_arkos.urls', namespace='sistema_arkos')),
     # path('api/contacto/', include('contacto.urls', namespace='contacto')),
     # path('api/proyectos/', include('proyectos.urls', namespace='proyectos')),
