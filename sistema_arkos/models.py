@@ -10,3 +10,5 @@ class SistemaArkos(models.Model):
 class BeneficiosSistema(models.Model):
     titulo = models.CharField(max_length=250)
     descripcion = models.TextField()
+    def __str__(self):
+        return self.titulo

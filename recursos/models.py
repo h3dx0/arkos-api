@@ -7,3 +7,5 @@ class Recursos(models.Model):
     titulo = models.CharField(max_length=250)
     descripcion = models.TextField()
     archivo = models.FileField(upload_to='recursos/')
+    def __str__(self):
+        return self.titulo
